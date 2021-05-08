@@ -4,13 +4,23 @@ namespace ACM.BL
 {
     public class Customer
     {
-        public string FullName 
+        public string FullName
         {
-            get
+            get 
             {
-                return LastName += FirstName;
+                string fullName = LastName;
+                if (!string.IsNullOrWhiteSpace(FirstName))
+                {
+                    if (!string.IsNullOrWhiteSpace(LastName))
+                    {
+                        fullName += ", ";
+                    }
+                    fullName += FirstName;
+                }
+                return fullName;
             }
         }
+        public static int InstanceCount { get; set; }
         public int CustomerID { get; private set; }
         public string EmailAdress { get; set; }
         public string FirstName { get; set; }
