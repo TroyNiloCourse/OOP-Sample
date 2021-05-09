@@ -6,19 +6,22 @@ namespace ACM.BLTest
     [TestClass]
     public class CustomerTests
     {
+
         [TestMethod]
         public void StaticInstanceCount()
         {
             //Arrange
-            var customer = new Customer();
-            customer.FirstName = "Linda";
+            var customer = new Customer
+            {
+                FirstName = "Linda"
+            };
             Customer.InstanceCount += 1;
 
-            var customer2 = new Customer();
+            var customer1 = new Customer();
             customer.FirstName = "Norma";
             Customer.InstanceCount += 1;
 
-            var customer3 = new Customer();
+            var customer2 = new Customer();
             customer.FirstName = "Betty";
             Customer.InstanceCount += 1;
             //Act 
@@ -27,6 +30,34 @@ namespace ACM.BLTest
             //Assert
             Assert.AreEqual(Customer.InstanceCount, actual);
         }
+
+        [TestMethod]
+        public void ValidateValid()
+        {
+            var customer = new Customer
+            {
+                LastName = "Nilo",
+                EmailAdress = "tnilo@sample.com"
+            };
+            var expected = true;
+            var actual = customer.Validate();
+            Assert.AreEqual(expected,actual);
+
+        }
+        [TestMethod]
+        public void ValidateInValid()
+        {
+            var customer = new Customer
+            {
+                LastName = "Nilo",
+                
+            };
+            var expected = false;
+            var actual = customer.Validate();
+            Assert.AreEqual(expected, actual);
+
+        }
+
         [TestMethod]
         public void FullNameTestValid()
         {
