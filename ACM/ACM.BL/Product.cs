@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ACM.BL
 {
-    class Product
+     public class Product
     {
         public Product()
         {
@@ -25,14 +25,6 @@ namespace ACM.BL
             if (CurrentPrice == null) isValid = false;
             return isValid;
         }
-        public Product Retrieve(int productId)
-        {
-            return new Product();
-        }
-       
-        public bool Save()
-        {
-            return true;
-        }
+    
     }
 }

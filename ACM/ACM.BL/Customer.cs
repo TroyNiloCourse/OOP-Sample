@@ -9,9 +9,9 @@ namespace ACM.BL
         {
 
         }
-        public Customer(int customerID)
+        public Customer(int customerId)
         {
-            CustomerID = customerID;
+            CustomerId = customerId;
         }
         public string FullName
         {
@@ -30,7 +30,7 @@ namespace ACM.BL
             }
         }
         public static int InstanceCount { get; set; }
-        public int CustomerID { get; private set; }
+        public int CustomerId { get; private set; }
         public string EmailAdress { get; set; }
         public string FirstName { get; set; }
         private string _lastname;
@@ -51,18 +51,6 @@ namespace ACM.BL
             if (string.IsNullOrWhiteSpace(LastName)) isValid = false;
             if (string.IsNullOrWhiteSpace(EmailAdress)) isValid = false;
             return isValid;
-        }
-        public Customer Retrieve(int customerId)
-        {
-            return new Customer();
-        }
-        public List<Customer> Retrieve()
-        {
-            return new List<Customer>();
-        }
-        public bool Save()
-        {
-            return true;
         }
     }
 }
