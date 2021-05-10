@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ACM.BL
 {
-    class Address
+   public class Address
     {
         public Address()
         {
@@ -20,7 +20,7 @@ namespace ACM.BL
      public string Province { get; set; }
      public string PostalCode { get; set; }
      public string Country { get; set; }
-     public string AddressType { get; set; }
+     public int AddressType { get; set; }
      public string State { get; set; }
      public int AddressId { get; private set; }
 
